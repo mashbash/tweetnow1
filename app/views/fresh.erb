@@ -1,0 +1,6 @@
+<div class="container">
+
+  <%= erb :_tweets, :locals => {:user => @user, :tweets => @tweets} %>
+  <%= erb :_followers, :locals => {:followers => @user.followers.sample(15)} %>
+
+</div>

@@ -1,0 +1,11 @@
+<div class="column1">
+
+  <h3> Tweets by <%= user.username%>:</h3>
+
+  <ul>
+    <% tweets.each do |tweet| %>
+    <li><%= tweet.content %></li>
+    <% end %>
+  </ul>
+</div>
+<%= erb :_followers, :locals => {:followers => user.followers.sample(15)} %>
