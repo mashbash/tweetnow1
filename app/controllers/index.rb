@@ -1,12 +1,13 @@
 require 'twitter'
 
+
 before do
   session[:oauth] ||= {}            # we'll store the request and access tokens here
   host = request.host
   host << ":9292" if request.host == "localhost"
-  consumer_key = CONSUMER_KEY       # what twitter.com/apps says   
-  consumer_secret = CONSUMER_SECRET # shhhh, its a secret   
-  @consumer = OAuth::Consumer.new(consumer_key, consumer_secret, :site => "http://twitter.com")
+  consumer_key = ENV['TWITTER_KEY']       # what twitter.com/apps says   
+  consumer_secret = ENV['TWITTER_SECRET'] # shhhh, its a secret   
+  @consumer = OAuth::Consumer.new(consumer_key, consumer_secret, :site => "https://api.twitter.com")
   # generate a request token for this user session if we haven't already
   request_token = session[:oauth][:request_token]   
   request_token_secret = session[:oauth][:request_token_secret]
