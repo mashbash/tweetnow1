@@ -1,0 +1,10 @@
+<ul>
+  <% if error %>
+    <li>Error: <%= error %>
+  <% else %>
+    <li>
+      @<a href="http://twitter.com/<%= username %>" target="_blank"><%= username %></a>:
+      <%= tweet %>
+    </li>
+  <% end %>
+</ul>
