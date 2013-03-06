@@ -1,7 +1,9 @@
 source :rubygems
 
-# PostgreSQL driver
 gem 'twitter'
+gem 'oauth'
+
+# PostgreSQL driver
 gem 'pg'
 
 # Sinatra driver
