@@ -13,10 +13,8 @@ configure do
 end
 
 Twitter.configure do |config|
-  config.consumer_key = "67ZedRa4gv5u29E7KM0CQ"
-  config.consumer_secret = "DN8PL4Q7Crgv6S7Hg6X1NMVBXmXzF07E7kT5Ja4PQw"
-  config.oauth_token = "1244778728-KyWIyW6cehSyIrUQeiOsosb9pWKomDCr0aXws1O"
-  config.oauth_token_secret = "pjCdBk7PhXekPXHR8sxhSxaTLT5nkf1fmh9VuhGJw7s"
+  config.consumer_key = ENV['TWITTER_KEY']
+  config.consumer_secret = ENV['TWITTER_SECRET']
 end
 
 run Sinatra::Application
